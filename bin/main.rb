@@ -24,10 +24,9 @@ Telegram::Bot::Client.run(token) do |bot|
       playagain = 0
       while playagain.zero?
         question = Geo.give_question
-        # See more: https://core.telegram.org/bots/api#replykeyboardmarkup
         answers =
           Telegram::Bot::Types::ReplyKeyboardMarkup
-          .new(keyboard: Geo.give_question, one_time_keyboard: true)
+          .new(keyboard: Geo.give_options, one_time_keyboard: true)
         bot.api.send_message(chat_id: message.chat.id, text: question, reply_markup: answers)
         bot.listen do |answer|
           if answer.text == Geo.give_answer
@@ -39,7 +38,8 @@ Telegram::Bot::Client.run(token) do |bot|
         end
         bot.api.send_message(chat_id: message.chat.id, text: 'Do you want another question?', reply_markup: play_again_keyboard)
         bot.listen do |answer|
-          answer.text == 'Yes' ? break : playagain = 1
+          playagain = 1 if answer.text == 'No'
+          break
         end
       end
 
@@ -47,10 +47,9 @@ Telegram::Bot::Client.run(token) do |bot|
       playagain = 0
       while playagain.zero?
         question = Math.give_question
-        # See more: https://core.telegram.org/bots/api#replykeyboardmarkup
         answers =
           Telegram::Bot::Types::ReplyKeyboardMarkup
-          .new(keyboard: Math.give_question, one_time_keyboard: true)
+          .new(keyboard: Math.give_options, one_time_keyboard: true)
         bot.api.send_message(chat_id: message.chat.id, text: question, reply_markup: answers)
         bot.listen do |answer|
           if answer.text == Math.give_answer
@@ -58,11 +57,12 @@ Telegram::Bot::Client.run(token) do |bot|
           else
             bot.api.send_message(chat_id: message.chat.id, text: "Sorry, the correct answer was #{Math.give_answer}")
           end
-        break
+          break
         end
         bot.api.send_message(chat_id: message.chat.id, text: 'Do you want another question?', reply_markup: play_again_keyboard)
         bot.listen do |answer|
-          answer.text == 'Yes' ? break : playagain = 1
+          playagain = 1 if answer.text == 'No'
+          break
         end
       end
     end
