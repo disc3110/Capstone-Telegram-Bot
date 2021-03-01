@@ -4,6 +4,9 @@ require_relative '../lib/questions'
 
 # Manage the questions
 class Quiz
+
+attr_reader :arr_questions
+
   def initialize(questionsarr)
     @arr_questions = questionsarr
     @current_question = nil
