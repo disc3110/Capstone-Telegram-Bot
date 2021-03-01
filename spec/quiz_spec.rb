@@ -1,7 +1,8 @@
 require_relative '../lib/quiz'
 
 describe Quiz do
-  let(:one_question) {[{
+  let(:one_question) {
+    [{
     question: 'What\'s my name?',
     answers: {
       a: 'Diego',
@@ -10,7 +11,8 @@ describe Quiz do
       d: 'Lenin'
     },
     correctAnswer: 'Diego'
-  }]}
+    }]
+  }
   let(:one_question_arr) {Quiz.new(one_question)}
   describe '#give_question' do
     it 'gets a random question from an array of questions' do

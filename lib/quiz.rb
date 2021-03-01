@@ -1,11 +1,8 @@
-# frozen_string_literal: true
-
 require_relative '../lib/questions'
 
 # Manage the questions
 class Quiz
-
-attr_reader :arr_questions
+  attr_reader :arr_questions
 
   def initialize(questionsarr)
     @arr_questions = questionsarr
