@@ -36,7 +36,7 @@ you can use the /geo command to get a geography question or the /math command to
 
 ### Deployment
 
-1. Create a Bot with [BotFather] https://t.me/BotFather
+1. Create a Bot with [BotFather] (https://t.me/BotFather)
 2. Copy the API TOKEN to your clipboard
 3. Paste the token in the main file
 4. Run bundle install
