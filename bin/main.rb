@@ -1,4 +1,5 @@
 # rubocop:disable Metrics/BlockLength
+#!/usr/bin/env ruby
 require 'telegram/bot'
 require_relative '../lib/quiz'
 require_relative '../lib/questions'

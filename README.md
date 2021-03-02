@@ -12,11 +12,13 @@ This is a microverse approach to develop a Telegram Bot in ruby.
 
 - Ruby
 
+## Getting Started
 
-## Getting Started 
+### App description
 
-- go to this [link]() and press the start button.
-
+The app will send you different multiple choice question of the selected subject and tells you if your
+answer is correct or the correct answer and then asks you if you want another question. The choices will be
+displayed in the keyboard
 
 ### Prerequisites
 
@@ -24,15 +26,25 @@ This is a microverse approach to develop a Telegram Bot in ruby.
 * Having a Telegram Account
 
 
+### Live DEMO
+
+- go to this [link](https://t.me/disc3110_bot) and press the start button.
+
 ### Usage
 
 you can use the /geo command to get a geography question or the /math command to get a math question
 
-### App description
+### Deployment
 
-The app will send you different multiple choice question of the selected subject and tells you if your
-answer is correct or the correct answer and then asks you if you want another question. The choices will be
-displayed in the keyboard
+1. Create a Bot with [BotFather] https://t.me/BotFather
+2. Copy the API TOKEN to your clipboard
+3. Paste the token in the main file
+4. Run bundle install
+5. Run main
+6. Open the Telegram app
+7. Open your Bot conversation
+8. Press the start button or send /start
+
 
 👤 **Author**
 
