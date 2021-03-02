@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'telegram/bot'
 require_relative '../lib/quiz'
 require_relative '../lib/questions'
