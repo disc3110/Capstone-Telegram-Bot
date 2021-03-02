@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 require 'telegram/bot'
 require_relative '../lib/quiz'
 require_relative '../lib/questions'
@@ -64,3 +65,4 @@ Telegram::Bot::Client.run(token) do |bot|
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

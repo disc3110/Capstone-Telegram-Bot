@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/ModuleLength
 module Quizzes
   GEO_QUESTIONS = [
     {
@@ -141,3 +142,4 @@ module Quizzes
     }
   ].freeze
 end
+# rubocop:enable Metrics/ModuleLength

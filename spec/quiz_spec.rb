@@ -1,3 +1,4 @@
+# rubocop:disable Metrics/BlockLength
 require_relative '../lib/quiz'
 
 describe Quiz do
@@ -43,3 +44,4 @@ describe Quiz do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
