@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Quizzes
   GEO_QUESTIONS = [
     {
