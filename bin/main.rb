@@ -6,9 +6,7 @@ token = '1533482595:AAFt3yF63IFSHPJ9ly0zzODPuORNYNEMr5k'
 
 Geo = Quiz.new(Quizzes::GEO_QUESTIONS)
 Math = Quiz.new(Quizzes::MATH_QUESTIONS)
-play_again_keyboard =
-  Telegram::Bot::Types::ReplyKeyboardMarkup
-  .new(keyboard: %w[Yes No], one_time_keyboard: true)
+play_again_keyboard = Telegram::Bot::Types::ReplyKeyboardMarkup.new(keyboard: %w[Yes No], one_time_keyboard: true)
 
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
@@ -23,8 +21,7 @@ Telegram::Bot::Client.run(token) do |bot|
       while playagain.zero?
         question = Geo.give_question
         answers =
-          Telegram::Bot::Types::ReplyKeyboardMarkup
-          .new(keyboard: Geo.give_options, one_time_keyboard: true)
+          Telegram::Bot::Types::ReplyKeyboardMarkup.new(keyboard: Geo.give_options, one_time_keyboard: true)
         bot.api.send_message(chat_id: message.chat.id, text: question, reply_markup: answers)
         bot.listen do |answer|
           if answer.text == Geo.give_answer
@@ -34,7 +31,8 @@ Telegram::Bot::Client.run(token) do |bot|
           end
           break
         end
-        bot.api.send_message(chat_id: message.chat.id, text: 'Do you want another question?', reply_markup: play_again_keyboard)
+        bot.api.send_message(chat_id: message.chat.id, text: 'Do you want another question?
+          ', reply_markup: play_again_keyboard)
         bot.listen do |answer|
           playagain = 1 if answer.text == 'No'
           break
