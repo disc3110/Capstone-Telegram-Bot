@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# tic-tac-toe
+# Capstone Telegram Bot
 
 > This is a Telegram bot that can help you study geography or math giving you questions of multiple choice
 
