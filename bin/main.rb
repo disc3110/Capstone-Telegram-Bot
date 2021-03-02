@@ -44,8 +44,7 @@ Telegram::Bot::Client.run(token) do |bot|
       while playagain.zero?
         question = Math.give_question
         answers =
-          Telegram::Bot::Types::ReplyKeyboardMarkup
-          .new(keyboard: Math.give_options, one_time_keyboard: true)
+          Telegram::Bot::Types::ReplyKeyboardMarkup.new(keyboard: Math.give_options, one_time_keyboard: true)
         bot.api.send_message(chat_id: message.chat.id, text: question, reply_markup: answers)
         bot.listen do |answer|
           if answer.text == Math.give_answer
@@ -55,7 +54,8 @@ Telegram::Bot::Client.run(token) do |bot|
           end
           break
         end
-        bot.api.send_message(chat_id: message.chat.id, text: 'Do you want another question?', reply_markup: play_again_keyboard)
+        bot.api.send_message(chat_id: message.chat.id, text: 'Do you want another question?
+          ', reply_markup: play_again_keyboard)
         bot.listen do |answer|
           playagain = 1 if answer.text == 'No'
           break
